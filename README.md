@@ -1,6 +1,6 @@
-# HOMEWORK 4 : Coding Trees
+# HUFFMAN CODING USING TREES
 
-###DESCRIPTION
+### DESCRIPTION
 Encoding and decoding are common operations on data. Given data in the form of symbols (e.g. text), it can be encoded by translating each symbol into a unique code, possibly consisting of many symbols. Decoding applies this process in reverse. The unique codes may be made of a different set of symbols (e.g. the original symbols may be characters, but the codes are bits). We call this set "coding symbols".
 <br>
 <br>
@@ -15,7 +15,7 @@ How is a prefix code generated? One can arbitrarily assign a prefix code for a s
 
 <br>
 
-####DECODING
+#### DECODING
 Given an encoded message "10001101", we can decode it as follows: <br>
 
 Start at the root of the tree. <br>
@@ -26,7 +26,7 @@ Go to step 2. <br>
 
 <br>
 
-####ENCODING
+#### ENCODING
 The Huffman encoding algorithm to generate a binary prefix code, given the source message M is as follows: <br>
 
 Create a frequency table (a,f(a)) where a is a symbol in M and f(a) is the number of times a occurs in M. <br>
@@ -38,7 +38,7 @@ Add a new entry (x.y, f(x)+f(y)) to Q, where x.y is the concatenation of x and y
 If there is more than one item in Q, go to step 4. Otherwise, report the resulting coding table. <br>
 
 
-####REQUIREMENT
+#### REQUIREMENT
 Design and implement the interfaces/classes to be able to encode and decode these types of coding sets. Your implementation should be able to:
 
 1. decode messages given a symbol->code dictionary containing a prefix code.
@@ -53,10 +53,7 @@ Design and implement the interfaces/classes to be able to encode and decode thes
 read messages from either the keyboard or a file, write messages to the screen or to a file, write a binary encoding to a file using either binary or hexadecimal. For example, the binary encoding:
 read and write an prefix encoding to a human-readable text file.
 
-###SUBMISSION SUMMARY
-In this homework I have designed and implemented a solution that can be used to generate a codingtrees code, decode an encoded message and encode a given plain text. Decoding and encoding can work either with codingtrees code or any other prefix codes.
-
-###HOW TO USE
+### HOW TO USE
 All the code is in src/.
 All the tests are in be test/.
 Original, revised design document, the JAR file, example runs of program are in res/.
@@ -64,13 +61,13 @@ Original, revised design document, the JAR file, example runs of program are in 
 The program can be run using the JAR file within the res/ folder in the zipped file.
 1. Unzip submission folder
 2. Go to the to res/ folder using command prompt
-3. Execute "java -jar HW4CodingTrees.jar"
+3. Execute "java -jar HuffmanEncoding.jar"
 4. Program should successfully execute
 
-###PARTS COMPLETE
+### PARTS COMPLETE
 All the parts and requirements of the problem statement are completed and the tests have a good coverage of all program features.
 
-###ASSUMPTIONS
+### ASSUMPTIONS
 1. Input can be provided either through a file or through keyboard
 2. Plain text can contain any character including special ones
 3. Code symbols can contain any character including special ones
@@ -80,7 +77,7 @@ All the parts and requirements of the problem statement are completed and the te
 7. If frequency of 2 elements is same, Huffman will prefer lexicographically smaller element first.
 
 
-###DESIGN AND JUSTIFICATION
+### DESIGN AND JUSTIFICATION
 The class design and association between various elements like Decoder, Encoder, Huffman code generator and n-children trees. Encoder, Decoder and Huffman code generator interface will make the code more reusable and efficient. All the features that required encoding and decoding are as part of methods in the respective classes.
 
 Decoder is implemented by using a custom tree which is n-children tree. There is a group node in the tree that contains a dictionary mapping of tress at every branch. Moreover, the leaf node will contain the actual character data. All the tree interfaces and classes are package private to avoid outside access.
